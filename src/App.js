@@ -9,7 +9,10 @@ import Contact from './Components/Contact';
 import Home from './Components/Home';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import PrivacyPolicy from './Components/PrivacyPolicy';
+import RefundPolicy from './Components/RefundPolicty';
 import TermsAndConditions from './Components/TermsAndCondition';
+import AboutUs from './Components/AboutUs';
+import ContactUs from './Components/ContactUs';
 
 function App() {
   return (
@@ -17,6 +20,9 @@ function App() {
       <Routes>
       <Route path="/" element={<Home />} />
       <Route path='/privacy' element={<PrivacyPolicy/>}/>
+      <Route path='/about' element={<AboutUs/>}/>
+      <Route path='/contact' element={<ContactUs/>}/>
+      <Route path='/refund' element={<RefundPolicy/>}/>
       <Route path='/terms' element={<TermsAndConditions/>}/>
       </Routes>
     </Router>
