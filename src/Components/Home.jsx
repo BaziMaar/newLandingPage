@@ -10,16 +10,21 @@ import Contact from './Contact';
 
 function Home() {
   return (
-    <div className="App">
+    <>
     <Header/>
+    <div className="App">
+    
     <Feature/>
     <Presentation/>
     <About image={AboutImaged} title="Spin" button='Download App'/>
     <About image={AboutImage} title="Aviator" button='get the app'/>
     <About image={AboutImages} title="Mines" button='Download App'/>
+    <About image={AboutImages} title="Dragon Tiger" button='Download App'/>
+    <About image={AboutImages} title="Wingo" button='Download App'/>
     <Contact/>
     
   </div>
+  </>
   )
 }
 
