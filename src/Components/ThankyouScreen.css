@@ -1,0 +1,33 @@
+/* ThankYouScreen.css */
+
+.thank-you-container {
+    background: black;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .thank-you-message {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  .download-message {
+    font-size: 1.5em;
+    animation: fadeInDown 2s ease-in-out;
+  }
+  
+  @keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

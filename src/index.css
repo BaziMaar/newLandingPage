@@ -462,7 +462,7 @@ color:#9d00ff;
       transform: translate(-50%,-50%);
   }
   .about-image{
-      display:none;
+    height:200px;
   }
   .cv-btn{
       margin-left: 27%;
@@ -470,13 +470,13 @@ color:#9d00ff;
   }
   #about{
       justify-content: center;
-      padding-top: 0px;
+      padding-top: 20px;
       text-align: center;
       
       margin-top: 0px;
   }
   .about-text{
-      width: 90%;
+      width: 70%;
   }
   .about-text h1{
       font-size:4rem;
@@ -488,7 +488,14 @@ color:#9d00ff;
       margin-bottom: 100px;
   }
   #presentaion{
-      display: none;
+    padding-top: 10px;
+    width:380px;
+    height:230px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(./Images/presentationf.png);
+    text-align: center;
   }
 }
 @media(max-width:600px){
