@@ -2,11 +2,13 @@ import React from 'react'
 import Header from './Header';
 import Feature from './Feature';
 import About from './About';
-import AboutImages from '../Images/abouts2.png'
-import AboutImaged from '../Images/abouts3.png'
-import AboutImage from '../Images/abouts1.png'
+import AboutImages from '../Images/Wingo Logo.png'
+import AboutImaged from '../Images/Dragon & Tiger Logo.png'
+import AboutImage from '../Images/Lucky.png'
+import LuckySpin from '../Images/Lucky Spin Logo.png'
 import Presentation from './Presentation';
 import Contact from './Contact';
+import Mines from '../Images/Mines Logo.png'
 
 function Home() {
   return (
@@ -16,11 +18,7 @@ function Home() {
     
     <Feature/>
     <Presentation/>
-    <About image={AboutImaged} title="Spin" button='Download App'/>
-    <About image={AboutImage} title="Aviator" button='get the app'/>
-    <About image={AboutImages} title="Mines" button='Download App'/>
-    <About image={AboutImages} title="Dragon Tiger" button='Download App'/>
-    <About image={AboutImages} title="Wingo" button='Download App'/>
+    <About image={LuckySpin} title="Bazi Maar Games" button='Download App'/>
     <Contact/>
     
   </div>
