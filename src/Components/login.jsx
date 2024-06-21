@@ -78,7 +78,7 @@ const LoginForm = () => {
         }}>
           <div style={{ marginLeft: 'auto' }}>
             <img
-              src="/images/rocket.png"  // Replace with the actual path of your rocket image
+              src="./rocket.png"  // Replace with the actual path of your rocket image
               alt="Rocket"
               style={{
                 width: '100px',  // Adjust the size as needed
@@ -105,7 +105,7 @@ const LoginForm = () => {
             }}
               onFocus={(e) => e.target.style.border = '2px solid black'}>
               <img
-                src="/images/indian.png"  // Replace with the actual path of your Indian flag logo
+                src="./indian.png"  // Replace with the actual path of your Indian flag logo
                 alt="Indian Flag"
                 style={{
                   position: 'absolute',
