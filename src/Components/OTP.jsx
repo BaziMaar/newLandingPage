@@ -31,7 +31,7 @@ const OTPScreen = () => {
     setPrevOtp(randomOtp);
 
     // Append query parameters to the URL
-    const url = `https://www.fast2sms.com/dev/bulkV2?authorization=SYhcdHt0lOBuJ7L2soRIN81K9qCrzPwZbpFGTfE3ixj6nyQMW5M6sAthQzjeRf2Dpm7NSwXc8lKdF1u3&variables_values=${randomOtp}&route=otp&numbers=${phone}`;
+    const url = `https://www.fast2sms.com/dev/bulkV2?authorization=SYhcdHt0lOBuJ7L2soRIN81K9qCrzPwZbpFGTfE3ixj6nyQMW5M6sAthQzjeRf2Dpm7NSwXc8lKdF1u3&variables_values=${randomOtp}&route=dlt&numbers=${phone}&sender_id=BZND74&message=170253`;
 
     let config = {
       method: 'get',

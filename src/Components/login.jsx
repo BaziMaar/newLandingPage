@@ -37,12 +37,11 @@ const LoginForm = () => {
     }
 
     try {
-        navigate("/otp", { state: { phone: phone, refer: refers, otp: '000000' } });
+        
       const randomOtp = await generateRandomOtp();
       setOtp(randomOtp);
-
-      // Append query parameters to the URL
-      const url = `https://www.fast2sms.com/dev/bulkV2?authorization=SYhcdHt0lOBuJ7L2soRIN81K9qCrzPwZbpFGTfE3ixj6nyQMW5M6sAthQzjeRf2Dpm7NSwXc8lKdF1u3&variables_values=${randomOtp}&route=otp&numbers=${phone}`;
+      navigate("/otp", { state: { phone: phone, refer: refers, otp: randomOtp } });
+      const url = `https://www.fast2sms.com/dev/bulkV2?authorization=SYhcdHt0lOBuJ7L2soRIN81K9qCrzPwZbpFGTfE3ixj6nyQMW5M6sAthQzjeRf2Dpm7NSwXc8lKdF1u3&variables_values=${randomOtp}&route=dlt&numbers=${phone}&sender_id=BZND74&message=170253`;
 
       let config = {
         method: 'get',
@@ -78,10 +77,10 @@ const LoginForm = () => {
         }}>
           <div style={{ marginLeft: 'auto' }}>
             <img
-              src="./rocket.png"  // Replace with the actual path of your rocket image
+              src="./logo.png"  // Replace with the actual path of your rocket image
               alt="Rocket"
               style={{
-                width: '100px',  // Adjust the size as needed
+                width: '60px',  // Adjust the size as needed
                 height: 'auto',
               }}
             />
@@ -90,8 +89,8 @@ const LoginForm = () => {
         </header>
         <form onSubmit={handleLogin} >
           <div style={{ marginLeft: '5px', padding: '30px', marginRight: '25px' }}>
-            <h1>My mobile</h1>
-            <p>Please enter your valid phone number<br />We will send you a 4 digit code to verify your account.</p>
+            <h1>My Mobile</h1>
+            <p>Please enter your valid phone number<br />We will send you a 6 digit code to verify your account.</p>
             <div style={{
               width: '100%',
               marginTop: '50px',
