@@ -11,17 +11,36 @@ const OTPScreen = () => {
   const phone = location.state ? location.state.phone : '';
   const refer = location.state ? location.state.refer : '';
   const [prevOtp, setPrevOtp] = useState(null);
+  const [versionLink, setVersionLink] = useState('');
+
+  useEffect(() => {
+    getVersionLink();
+  }, []);
+
+  const getVersionLink = async () => {
+    try {
+      const response = await fetch('https://sattajodileak.com/user/getVersion');
+      const data = await response.json();
+      if (data && data.latestEntry && data.latestEntry.link) {
+        setVersionLink(data.latestEntry.link);
+      } else {
+        console.error('Invalid response format from the API');
+      }
+    } catch (error) {
+      console.error('Error fetching version link:', error);
+    }
+  };
 
   const handleChange = (index, value) => {
     const newOTP = [...otp];
     newOTP[index] = value;
     setOTP(newOTP);
 
-    // Prevent automatic shifting of focus to the next input field
     if (value && index < otp.length - 1) {
       document.getElementById(`otp-${index + 2}`).focus();
     }
   };
+
   const generateRandomOtp = () => {
     return Math.floor(100000 + Math.random() * 900000); // Random 6-digit number
   };
@@ -30,7 +49,6 @@ const OTPScreen = () => {
     const randomOtp = generateRandomOtp();
     setPrevOtp(randomOtp);
 
-    // Append query parameters to the URL
     const url = `https://www.fast2sms.com/dev/bulkV2?authorization=SYhcdHt0lOBuJ7L2soRIN81K9qCrzPwZbpFGTfE3ixj6nyQMW5M6sAthQzjeRf2Dpm7NSwXc8lKdF1u3&variables_values=${randomOtp}&route=dlt&numbers=${phone}&sender_id=BZND74&message=170253`;
 
     let config = {
@@ -48,7 +66,6 @@ const OTPScreen = () => {
     } catch (error) {
       alert("Too Many Attempts for this Number! Please Try Again after Sometime");
       console.error('Error:', error);
-      // Handle error
     }
   };
 
@@ -59,21 +76,23 @@ const OTPScreen = () => {
       setError('Please enter a valid 6-digit OTP');
       return;
     }
-    console.log(enteredOTP)
-    console.log(prevOtp)
+    console.log(enteredOTP);
+    console.log(prevOtp);
     if (enteredOTP == prevOtp) {
       console.log('OTP verification successful!');
       try {
         const loginResponse = await axios.post('https://sattajodileak.com/user/login', {
           phone: phone,
-          // Add any other relevant data you want to send with the login request
         });
-        alert("Already Registerd")
+        alert("Already Registered");
         console.log('Login Response:', loginResponse.data);
+
+        // Navigate to the version link if already registered
+          window.location.href = versionLink;
           navigate("/", { state: { phone: phone, refer: refer } });
 
+
         setError('');
-        // Add logic to navigate to the next screen or perform any action
       } catch (err) {
         navigate("/signup", { state: { phone: phone, refer: refer } });
         setError('Error occurred while logging in. Please try again.');
@@ -91,7 +110,6 @@ const OTPScreen = () => {
     console.log(location.state);
     setPrevOtp(location.state.otp);
     
-    // Clear interval when the timer reaches 0
     if (timer === 0) {
       clearInterval(interval);
     }
@@ -99,7 +117,6 @@ const OTPScreen = () => {
     return () => clearInterval(interval);
   }, [timer]);
 
-  // Format timer to mm:ss
   const formattedTimer = `${Math.floor(timer / 60)
     .toString()
     .padStart(2, '0')}:${(timer % 60).toString().padStart(2, '0')}`;

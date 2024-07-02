@@ -12,6 +12,25 @@ const Signup = () => {
   const location = useLocation();
   const phone = location.state ? location.state.phone : '';
   const refer=location.state?location.state.refer:'';
+  const [versionLink, setVersionLink] = useState('');
+
+  useEffect(() => {
+    getVersionLink();
+  }, []);
+
+  const getVersionLink = async () => {
+    try {
+      const response = await fetch('https://sattajodileak.com/user/getVersion');
+      const data = await response.json();
+      if (data && data.latestEntry && data.latestEntry.link) {
+        setVersionLink(data.latestEntry.link);
+      } else {
+        console.error('Invalid response format from the API');
+      }
+    } catch (error) {
+      console.error('Error fetching version link:', error);
+    }
+  };
   console.log(`>>>>>>>>${JSON.stringify(location)}`)
   useEffect(() => {
     // Set the referral code from the link to the state
@@ -35,12 +54,15 @@ const Signup = () => {
         });
         if(loginResponse){
           alert("Successfully LoggedIn")
+
         }
         else{
           alert("SOMETHING WENT WRONG")
         }
         console.log('Login Response:', loginResponse.data);
+        window.location.href = versionLink;
         navigate("/download");
+
 
     // Your API call logic here
 
