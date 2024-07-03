@@ -160,7 +160,7 @@ const OTPScreen = () => {
                 key={index}
                 id={`otp-${index + 1}`}
                 placeholder='X'
-                type="text"
+                type="tel"
                 value={digit}
                 maxLength={1}
                 onChange={(e) => handleChange(index, e.target.value)}

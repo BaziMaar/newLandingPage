@@ -126,7 +126,7 @@ const LoginForm = () => {
               }}>+91|</span>
 
               <input
-                type="text"
+                type="tel"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 placeholder="Phone number"
