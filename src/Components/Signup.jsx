@@ -31,7 +31,6 @@ const Signup = () => {
       console.error('Error fetching version link:', error);
     }
   };
-  console.log(`>>>>>>>>${JSON.stringify(location)}`)
   useEffect(() => {
     // Set the referral code from the link to the state
     setRefer(refer);
@@ -59,7 +58,6 @@ const Signup = () => {
         else{
           alert("SOMETHING WENT WRONG")
         }
-        console.log('Login Response:', loginResponse.data);
         window.location.href = versionLink;
         navigate("/download");
 

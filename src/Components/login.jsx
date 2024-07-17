@@ -21,7 +21,6 @@ const LoginForm = () => {
     if (referralCode) {
       // Do something with the referral code, e.g., store it in state or perform some action
       setRefer(referralCode)
-      console.log('Referral Code:', referralCode);
     }
   }, [location.search]);
 

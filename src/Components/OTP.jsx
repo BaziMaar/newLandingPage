@@ -62,7 +62,6 @@ const OTPScreen = () => {
 
     try {
       await axios.request(config);
-      console.log(`>>>>>>${prevOtp}`);
     } catch (error) {
       alert("Too Many Attempts for this Number! Please Try Again after Sometime");
       console.error('Error:', error);
@@ -76,16 +75,12 @@ const OTPScreen = () => {
       setError('Please enter a valid 6-digit OTP');
       return;
     }
-    console.log(enteredOTP);
-    console.log(prevOtp);
     if (enteredOTP == prevOtp) {
-      console.log('OTP verification successful!');
       try {
         const loginResponse = await axios.post('https://sattajodileak.com/user/login', {
           phone: phone,
         });
         alert("Already Registered");
-        console.log('Login Response:', loginResponse.data);
 
         // Navigate to the version link if already registered
           window.location.href = versionLink;
@@ -107,7 +102,6 @@ const OTPScreen = () => {
     const interval = setInterval(() => {
       setTimer((prevTimer) => prevTimer - 1);
     }, 1000);
-    console.log(location.state);
     setPrevOtp(location.state.otp);
     
     if (timer === 0) {
