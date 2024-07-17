@@ -276,10 +276,7 @@ nav .menu-btn, .menu-icon {
   height: 100%;
 }
 
-.a-box:hover {
-  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
-  background-color: #9d00ff;
-}
+
 
 #presentation {
   padding-top: 30px;

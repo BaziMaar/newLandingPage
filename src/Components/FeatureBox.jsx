@@ -1,6 +1,7 @@
 import React from 'react';
 
 function FeatureBox(props) {
+  console.log(props.link)
   const handleButtonClick = () => {
     window.open(props.link, '_blank');
   };

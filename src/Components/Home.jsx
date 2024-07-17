@@ -9,6 +9,7 @@ import LuckySpin from '../Images/Lucky Spin Logo.png'
 import Presentation from './Presentation';
 import Contact from './Contact';
 import Mines from '../Images/Mines Logo.png'
+import { useState,useEffect } from 'react';
 
 function Home() {
   const [versionLink, setVersionLink] = useState('');
