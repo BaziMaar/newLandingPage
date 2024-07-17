@@ -1,6 +1,9 @@
 import React from 'react';
 
 function FeatureBox(props) {
+  const handleButtonClick = () => {
+    window.open(props.link, '_blank');
+  };
   return (
     <div className='a-box'>
       <div className='a-b-img'>
@@ -8,7 +11,7 @@ function FeatureBox(props) {
       </div>
       <div className='s-b-text'>
         <h2>{props.title}</h2>
-        <button className='download-btn'>Download</button>
+        <button onClick={handleButtonClick} className='download-btn' >Download</button>
       </div>
     </div>
   );

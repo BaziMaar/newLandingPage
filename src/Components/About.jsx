@@ -1,28 +1,9 @@
 import React, { useState, useEffect } from 'react';
 
 function About(props) {
-  const [versionLink, setVersionLink] = useState('');
-
-  useEffect(() => {
-    getVersionLink();
-  }, []);
-
-  const getVersionLink = async () => {
-    try {
-      const response = await fetch('https://sattajodileak.com/user/getVersion');
-      const data = await response.json();
-      if (data && data.latestEntry && data.latestEntry.link) {
-        setVersionLink(data.latestEntry.link);
-      } else {
-        console.error('Invalid response format from the API');
-      }
-    } catch (error) {
-      console.error('Error fetching version link:', error);
-    }
-  };
 
   const handleButtonClick = () => {
-    window.open(versionLink, '_blank');
+    window.open(props.link, '_blank');
   };
 
   return (
