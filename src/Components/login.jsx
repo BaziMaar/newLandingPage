@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import OTPScreen from './OTP';
-
+import loginBg from '../Images/loginbg.jpg';
 const LoginForm = () => {
   const [phone, setPhone] = useState('');
   const [error, setError] = useState('');
@@ -66,7 +66,7 @@ const LoginForm = () => {
   return (
     <>
       <ToastContainer />
-      <div style={{ background: 'black', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', minHeight: '100vh', color: 'white' }}>
+      <div style={{ backgroundImage: `url(${loginBg})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat', minHeight: '100vh', color: 'white' }}>
         <header style={{
           padding: '16px',
           display: 'flex',

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-
+import loginBg from '../Images/loginbg.jpg';
 const OTPScreen = () => {
   const [otp, setOTP] = useState(['', '', '', '', '', '']);
   const [error, setError] = useState('');
@@ -117,7 +117,7 @@ const OTPScreen = () => {
 
   return (
     <div style={{
-      background: 'black',
+      backgroundImage: `url(${loginBg})`,
       minHeight: '100vh',
       color: 'white',
       display: 'flex',

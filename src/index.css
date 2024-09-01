@@ -288,6 +288,13 @@ nav .menu-btn, .menu-icon {
   background-image: url(./Images/presentationf.png);
   text-align: center;
 }
+#loginbg { 
+  background-image: './loginbg.jpg';
+   background-size: 'cover';
+  background-repeat: 'no-repeat';
+   min-height: '100vh';
+  color: 'white';
+ };
 
 #presentation h1 {
   font-size: 2rem;
